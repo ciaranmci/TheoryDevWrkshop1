@@ -6,9 +6,9 @@
 
 ### Event details:
 * Location: University of Leeds.
-* Date: <date> <month> 2020.
+* Date: Tues 21st April 2020.
 * Menedeley group [folder](https://www.mendeley.com/community/theoretical-and-practical-foundations-of-safety-informatics/) for resource sharing.
-* Early career researcher: Ciar·n McInerney, PhD. ([ORCID](https://orcid.org/0000-0001-7620-7110), [Twitter](https://twitter.com/CMc_PhD), [Staff profile](https://eps.leeds.ac.uk/faculty-engineering-physical-sciences/staff/1736/ciaran-mcinerney))
+* Early career researcher: Ciar√°n McInerney, PhD. ([ORCID](https://orcid.org/0000-0001-7620-7110), [Twitter](https://twitter.com/CMc_PhD), [Staff profile](https://eps.leeds.ac.uk/faculty-engineering-physical-sciences/staff/1736/ciaran-mcinerney))
 --- 
 ### Folder contents:
 * Draft workshop publication in PDF format, for viewing;
