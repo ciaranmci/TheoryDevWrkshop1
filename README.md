@@ -1,7 +1,7 @@
 # Patient-safety challenges of new and emerging digital technologies:
 ### *A workshop of the 'Theoretical and Practical Foundations of Safety Informatics' series*
 
-*(This document was created graciously created using [https://www.makeareadme.com](https://www.makeareadme.com))*
+*(This document was created using [https://www.makeareadme.com](https://www.makeareadme.com))*
 
 
 ### Event details:
