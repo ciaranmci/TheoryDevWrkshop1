@@ -1,4 +1,4 @@
-# Patient-safety challenges of new and emerging health information technologies:
+# Novel patient-safety challenges posed by new and emerging health information technologies:
 ### *A workshop of the 'Theoretical and Practical Foundations of Safety Informatics' series*
 
 *(This document was created using [https://www.makeareadme.com](https://www.makeareadme.com))*
@@ -12,9 +12,8 @@
 --- 
 ### Folder contents:
 * Draft workshop publication in PDF format, for viewing;
-* Draft workshop publication in DOCX format, for comments;
-* Exemplar publication on which the draft is based ("Michie et al_2017.pdf"); _and_
-* A DOCX file containing the draft paper's heading, for invitees to contribute ("draft headings.docx").
+* Draft workshop publication in DOCX format, for comments; _and_
+* Exemplar publication series on which the draft is based ("Michie et al_2017.pdf").
 
 ### Requested actions:
 As an invitee to this folder, you are requested to undertake the following actions:
@@ -22,7 +21,7 @@ As an invitee to this folder, you are requested to undertake the following actio
 __Before the workshop__
 * Review the draft publication;
 * Suggest 3 citations relevant to the draft paper;
-* Declare what you would consider your contributin to the publication; _and_
+* Consider what your contributin to the publication could be (optional); _and_
 * Upload any relevant literature to the [Mendeley workshop series' group folder](https://www.mendeley.com/community/theoretical-and-practical-foundations-of-safety-informatics/).
 
 __After the workshop__
