@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!doctype html>
+<html >
+<html lang="en">
+
+	<head>
+        <script type="text/javascript">
+			
+            ;window.NREUM||(NREUM={});NREUM.init={privacy:{cookies_enabled:true}};
+            window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(27),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{l?l-=1:o(c||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:s.now();i("err",[t,n])}var i=t("handle"),a=t(28),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError",l=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),s.xhrWrappable&&t(14),d=!0)}c.on("fn-start",function(t,e,n){d&&(l+=1)}),c.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),c.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){_++,T=g.hash,this[u]=y.now()}function o(){_--,g.hash!==T&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var c="-start",s="-end",f="-body",u="fn"+c,d="fn"+s,p="cb"+c,l="cb"+s,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable){var x=t(10),b=t(11),E=t(8),R=t(6),O=t(13),N=t(7),M=t(14),P=t(9),S=t("ee"),C=S.get("tracer");t(16),y.features.spa=!0;var T,_=0;S.on(u,r),S.on(p,r),S.on(d,o),S.on(l,o),S.buffer([u,d,"xhr-done","xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+s,"clearTimeout"+c,u]),M.buffer([u,"new-xhr","send-xhr"+c]),N.buffer([m+c,m+"-done",m+f+c,m+f+s]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+c]),C.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(M,"send-xhr"+c),a(S,"xhr-resolved"),a(S,"xhr-done"),a(N,m+c),a(N,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,_>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),c=t(12),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(8),"addEventListener"in window&&t(6);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(v,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+l,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return o.emit(n+"start",[t,a],c),c.then(function(t){return o.emit(n+"end",[null,t],c),t},function(t){throw o.emit(n+"end",[t],c),t})})}var o=t("ee").get("fetch"),i=t(28),a=t(27);e.exports=o;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,p=c.Response,l=c.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(c,"fetch",s),o.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(s+"done",[null,e],n)}else o.emit(s+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){s.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){s.emit("jsonp-error",[],p),s.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var u=c(a),d="function"==typeof u.parent[u.key];if(d){var p={};f.inPlace(u.parent,[u.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),s.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(u);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function c(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var s=t("ee").get("jsonp"),f=t("wrap-function")(s);if(e.exports=s,o()){var u=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?f.inPlace(Node.prototype,l,"dom-"):(f.inPlace(HTMLElement.prototype,l,"dom-"),f.inPlace(HTMLHeadElement.prototype,l,"dom-"),f.inPlace(HTMLBodyElement.prototype,l,"dom-")),s.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=a.context(),n=c(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t("wrap-function"),a=t("ee").get("promise"),c=i(a),s=t(27),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),c=f.resolve(i);return c}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this),t[1]=c(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),c.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=c(t[0],"cb-",this),t[1]=c(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function i(t){y.push(t),h&&(b?b.then(a):v?v(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new l(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(l,x),x.prototype=l.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||s(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",c=1,s="",f="";return o+"@nr="+i+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(c.d.tk=i),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(24),h=t(17);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],16:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(17),f=t(15).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(21),m=t(20),v=t(18),w=window.XMLHttpRequest;a.features.xhr=!0,t(14),t(7),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){i(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<p;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof w&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url&&(n=t[0].url),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)})}},{}],17:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||c),"/"===o.pathname&&(r[t]=o),o}},{}],18:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(20);e.exports=r},{}],19:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(27),c=t(28),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,e])}},{}],20:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],21:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],22:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,c=t(29);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],23:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!v){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),v=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),p=t("loader"),l=t(26),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(o);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(i);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var v=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,!1)})}l(c)}},{}],24:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<i.length;c++)o=i[c],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(31)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],25:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(o="Safari",i=s[1])}e.exports={agent:o,version:i,match:r}},{}],26:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[o]?"hidden":"visible")}"addEventListener"in document&&i&&document.addEventListener(i,e,!1)}e.exports=r;var o,i,a;"undefined"!=typeof document.hidden?(o="hidden",i="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",i="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",i="webkitvisibilitychange",a="webkitVisibilityState")},{}],27:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],28:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],29:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),c=m(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([x,n,r,a]),a}}function l(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:l,addEventListener:l,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var c="nr@context",s=t("gos"),f=t(27),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(g,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}var a=t(22),c=t("handle"),s=t(27),f=t("ee"),u=t(25),d=window,p=d.document,l="addEventListener",h="attachEvent",m=d.XMLHttpRequest,v=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1184.min.js"},y=m&&v&&v[l]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:y,userAgent:u};t(19),t(23),p[l]?(p[l]("DOMContentLoaded",i,!1),d[l]("load",r,!1)):(p[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var b=0},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(28),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,16,5,3,4]);
+            ;NREUM.loader_config={accountID:"3006682",trustKey:"3006682",agentID:"812536340",licenseKey:"NRJS-09e243d8a531035d2ee",applicationID:"812536340"}
+            ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"NRJS-09e243d8a531035d2ee",applicationID:"812536340",sa:1}
+			
+        </script>
+
+		<!-- Google Analytics Content Experiment code -->
+		<script>
+		
+			function utmx_section(){}function utmx(){}(function(){var
+			k='192168-0',d=document,l=d.location,c=d.cookie;
+			if(l.search.indexOf('utm_expid='+k)>0)return;
+			function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+			indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+			length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+			'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+			'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+			'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+			valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+			'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+		
+		</script>
+
+		<script>
+		
+			(function(h,o,t,j,a,r){
+			h.hj = h.hj||function(){ (h.hj.q=h.hj.q||[]).push(arguments) }
+			h._hjSettings = { hjid: 1792990, hjsv: 6 }
+			a = o.getElementsByTagName('head')[0]
+			r = o.createElement('script');r.async=1
+			r.src = t+h._hjSettings.hjid+j+h._hjSettings.hjsv
+			a.appendChild(r)
+			})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=')
+		
+
+					hj(
+				'identify', 
+				194547, 
+				 {  
+					name: "Ciarán McInerney"
+				 } 
+			);
+				
+		
+			Userback = window.Userback || {};
+			Userback.access_token = '8546|14944|LELcbY2rRJuMyrpOXc4ihxbEEji82LVdEK8YKucILM1rtjtxtK';
+
+			Userback.widget_settings = {
+				main_button_background_colour: "#247CB3",  
+				main_button_text_colour: "white"
+			};
+			
+        	(function(id) {
+            	if (document.getElementById(id)) {return;}
+        		
+				var s = document.createElement('script');
+        		s.id = id;
+        		s.src = 'https://static.userback.io/widget/v1.js';
+        		var parent_node = document.head || document.body;
+        		parent_node.appendChild(s);
+			})('userback-sdk');	
+		
+    	</script>
+
+		
+		<style>
+			.userback-button-e:hover {
+				background-color: #808080 !important;
+			}
+			.userback-button {
+				font-size: .8em !important;
+			}
+		</style>
+		
+		
+		<script>utmx('url','A/B');</script>
+		<!-- End of Google Analytics Content Experiment code -->
+
+		<!-- Google Analytics code -->
+					<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-186918-1"></script>
+
+			<script>
+			
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				
+				gtag('config', 'UA-186918-1');
+			</script>
+		
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="google-site-verification" content="3oNMhivFw3_Q7QYQWJC7K099knwu7H9XS5gKK_9DIxY" />
+		<!-- Remove Sky Ad on Small Screens -->
+		
+			<style type="text/css">
+				@media screen and (max-width: 768px) {
+					.ad--sky {
+						display:none;
+					}
+				}
+			</style>
+		
+			<!-- prevent iOS from making phone number look-a-likes callable -->
+			<meta name="format-detection" content="telephone=no" />
+
+			<!-- for Google -->
+			<meta name="description" content="Journal of Medical Internet Research - International Scientific Journal for Medical Research, Information and Communication on the Internet" />
+			<meta name="keywords" content="Medical, Medicine, Internet, Research, Journal, ehealth, JMIR, open access publishing, medical research, medical informatics" />
+					<!-- for Facebook -->
+			<meta property="og:title" content="JMIR - Journal of Medical Internet Research" />
+			<meta property="og:image" content="http://www.jmir.org/ojs/public/logos/small/JMIR-logo-sm-1.png" />
+			<meta property="og:url" content="https://www.jmir.org" />
+			<meta property="og:description" content="Journal of Medical Internet Research - International Scientific Journal for Medical Research, Information and Communication on the Internet" />
+			<!-- for Twitter -->
+			<meta name="twitter:card" content="summary" />
+			<meta name="twitter:title" content="JMIR - Journal of Medical Internet Research" />
+			<meta name="twitter:description" content="Journal of Medical Internet Research - International Scientific Journal for Medical Research, Information and Communication on the Internet" />
+			<meta name="twitter:image" content="http://www.jmir.org/ojs/public/logos/small/JMIR-logo-sm-1.png"  />
+		
+		
+		
+<link rel="alternate" type="application/atom+xml" href="https://www.jmir.org/feed/atom" />
+<link rel="alternate" type="application/rdf+xml" href="https://www.jmir.org/feed/rss" />
+<link rel="alternate" type="application/rss+xml" href="https://www.jmir.org/feed/rss2" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+				
+					<title>JMIR - Journal of Medical Internet Research</title>
+				<!--[if (gt IE 8)|!(IE)]><!-->
+			<link rel="stylesheet" media="screen" href="https://asset.jmir.pub/assets/jmir_stylesheet.css" />
+			<link rel="stylesheet" href="/ojs/css/20th.css">
+			<link rel="stylesheet" media="print" href="https://asset.jmir.pub/assets/static/styles/print.css?v=127.1.1.1" />
+					<!--<![endif]-->
+
+		<link rel="stylesheet" href="https://asset.jmir.pub/assets/static/css/third-party-header.min.css?v=127.1.1.1" />
+		<link rel="canonical" href="https://www.jmir.org/content/author-instructions"/>
+        <link rel="stylesheet" href="https://asset.jmir.pub/assets/static/css/balloon.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<!--AngularJS-->
+		<!-- A little favicon just so it's not blank on a web browser. -->
+		<link rel="apple-touch-icon" sizes="57x57" href="https://asset.jmir.pub/assets/static/images/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="https://asset.jmir.pub/assets/static/images/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="https://asset.jmir.pub/assets/static/images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="https://asset.jmir.pub/assets/static/images/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="https://asset.jmir.pub/assets/static/images/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="https://asset.jmir.pub/assets/static/images/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="https://asset.jmir.pub/assets/static/images/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="https://asset.jmir.pub/assets/static/images/apple-touch-icon-152x152.png">
+		<link rel="icon" type="image/png" href="https://asset.jmir.pub/assets/static/images/favicon-196x196.png" sizes="196x196">
+		<link rel="icon" type="image/png" href="https://asset.jmir.pub/assets/static/images/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="https://asset.jmir.pub/assets/static/images/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="https://asset.jmir.pub/assets/static/images/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="https://asset.jmir.pub/assets/static/images/favicon-32x32.png" sizes="32x32">
+		<meta name="msapplication-TileColor" content="#247CB3">
+		<meta name="msapplication-TileImage" content="https://asset.jmir.pub/assets/static/images/mstile-144x144.png">
+		<!-- JSON cross-broswer compatibility -->
+
+		<script type="text/javascript" src="https://asset.jmir.pub/assets/static/js/scripts.external.min.js?v=127.1.1.1"></script>
+		<script type="text/javascript" src="https://asset.jmir.pub/assets/static/js/scripts.third-party.min.js?v=127.1.1.1"></script>
+
+		<script type="text/javascript" src="https://asset.jmir.pub/assets/static/js/custom.js?v=127.1.1.1"></script>
+		<script type="text/javascript" src="https://asset.jmir.pub/assets/static/js/controller.js?v=127.1.1.1"></script>
+
+        <script src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+	    <script type="text/javascript" src="https://platform.linkedin.com/in.js">
+		    api_key: 77jej2tj08s872
+		    authorize: true
+		    onLoad: onLinkedInLoad
+		</script>
+
+        <script type="text/javascript" src="https://badge.dimensions.ai/badge.js"></script>
+
+        
+            <script type="text/javascript">
+                window.zESettings = {
+                    webWidget: {
+                        offset: {
+                            mobile: {
+                                vertical: '50px'
+                            }
+                        }
+                    }
+                };
+            </script>
+        
+
+        <!-- Zendesk Widget -->
+        <!-- Start of jmir Zendesk Widget script -->
+        
+            <script>
+                /*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(c){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","jmir.zendesk.com");/*]]>*/
+            </script>
+        
+        <!-- End of jmir Zendesk Widget script -->
+
+		<!-- Style to hide Zendesk help button (for now) on article template as it's nav conflicts with help button -->
+		
+			<style type="text/css">
+				.support-tooltip {
+				background:#545454;
+				color:#ffffff;
+				display:inline-block;
+				padding:0.75rem;
+				font-family:'Roboto',sans-serif;
+				font-weight:50;
+				font-size:12px;
+				position:fixed; right: 0px; bottom: 70px;
+				}
+
+				.support-tooltip:after {
+					content: "";
+					position: absolute;
+					bottom: -10px;
+					left: calc(50% - 5px);
+					border-width: 10px 10px 0;
+					border-style: solid;
+					border-color: #545454 transparent;
+					display: block;
+					width: 0;
+				}
+
+			@media screen and (max-width: 699px){
+				.support-tooltip {
+					display: none !important;
+				}
+			}
+			@media only screen and (device-width: 768px) {
+				.support-tooltip {
+					display: none !important;
+				}
+			}
+			@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) {
+					.support-tooltip {
+						display: none !important;
+					}
+				}
+			</style>
+		
+        <script type="text/javascript">
+            window.journalId = '1';
+            window.apiServer = 'https://middleman.jmir.pub/';
+        </script>
+
+		<link rel="stylesheet" type="text/css" href="/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/highlightjs/styles/github.css">
+<link rel="stylesheet" type="text/css" href="/vendor/maximebf/debugbar/src/DebugBar/Resources/debugbar.css">
+<link rel="stylesheet" type="text/css" href="/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets.css">
+<link rel="stylesheet" type="text/css" href="/vendor/maximebf/debugbar/src/DebugBar/Resources/openhandler.css">
+<link rel="stylesheet" type="text/css" href="/ojs/plugins/widget.css">
+<script type="text/javascript" src="/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/vendor/maximebf/debugbar/src/DebugBar/Resources/vendor/highlightjs/highlight.pack.js"></script>
+<script type="text/javascript" src="/vendor/maximebf/debugbar/src/DebugBar/Resources/debugbar.js"></script>
+<script type="text/javascript" src="/vendor/maximebf/debugbar/src/DebugBar/Resources/widgets.js"></script>
+<script type="text/javascript" src="/vendor/maximebf/debugbar/src/DebugBar/Resources/openhandler.js"></script>
+<script type="text/javascript" src="/ojs/plugins/widget.js"></script>
+<script type="text/javascript">jQuery.noConflict(true);</script>
+
+	</head>
+	<!-- id on the body is for the scroll to top function -->
+	<body id="Body" class="JMIR ">
+
+	<noscript style="position:fixed;left:35%;top:30%;background: #ffa500; z-index: 99999;
+    padding: 10px 10px 10px 10px;
+    border-top: #ffa500;
+    border-bottom: #ffa500;
+    border-left: #ffa500;"><p style="color:white;">Sorry, you need to enable javascript for this page to function properly.</p></noscript>
+	  <button type="button" class="ion-clipboard btn--menu-cirular js--btn-open-toolbar"></button>
+
+		<header>
+			<div class="header-wrapper clearfix">
+				<div class="jmir-logo">
+					<a class="h1-link-ie" style="text-decoration:none;" href="//jmirpublications.com/"><h1>JMIR Publications</h1></a>
+				</div>
+
+				<nav class="">
+    <button type="button" class="btn-menu-mobile"><i class="icon-menu">&nbsp;</i>Menu</button>
+   <!--  <button type="button" class="btn-menu-mobile-close"><i class="icon-menu-close">&nbsp;</i>Close Menu</button> -->
+    <button type="button" id="btnMobileSearch" class="btn-menu-mobile-search"><i class="icon-search-mobile">&nbsp;</i>Search</button>
+    <button type="button" id="btn-user" class="btn-menu-mobile-user"><i class="icon-user">&nbsp;</i>User</button>
+    <div id="btnMobileSignInOptions" class="mobile-sign-in-options-closed">
+                <a href="/login">
+            <button class="btn-mobile-sign-in" type="button">MY ACCOUNT</button>
+        </a>
+            </div>
+    <button type="button" id="" class="btn-mobile-twitter-follow">
+        <a href="https://twitter.com/intent/follow?screen_name=jmirpub"><img src="https://asset.jmir.pub/assets/static/images/icon-twitter-follow.png" />
+        </a>Follow Us on Twitter</button>
+    <div id="navMobile" class="nav-mobile nav-mobile-closed clearfix">
+        <ul>
+            <li class=""><a href="https://www.jmir.org">Home</a></li>
+            <li id="btn-browse-journal">Browse Journal<span class="typcn typcn-plus"></span></li>
+
+            <li class="browse-journal-li browse-journal-li-closed">
+                <ul class="clearfix sub-ul">
+                    <li class=""><a href="/issue/current">Current Issue</a>
+                    </li>
+                    <li class=""><a href="/issue/upcoming">Upcoming Issue</a>
+                    </li>
+                    <li id="btn-browse-year" class="">Browse By Year<span class="typcn typcn-plus"></span>
+                    </li>
+                    <li class="browse-year browse-year-closed">
+                        <form>
+                            <label>Browse by Year:
+                                <select id="yearSelect">
+                                    <option value="">Select...</option>
+                                                                        <option value="/issue/year/1999">1999</option>
+                                                                        <option value="/issue/year/2000">2000</option>
+                                                                        <option value="/issue/year/2001">2001</option>
+                                                                        <option value="/issue/year/2002">2002</option>
+                                                                        <option value="/issue/year/2003">2003</option>
+                                                                        <option value="/issue/year/2004">2004</option>
+                                                                        <option value="/issue/year/2005">2005</option>
+                                                                        <option value="/issue/year/2006">2006</option>
+                                                                        <option value="/issue/year/2007">2007</option>
+                                                                        <option value="/issue/year/2008">2008</option>
+                                                                        <option value="/issue/year/2009">2009</option>
+                                                                        <option value="/issue/year/2010">2010</option>
+                                                                        <option value="/issue/year/2011">2011</option>
+                                                                        <option value="/issue/year/2012">2012</option>
+                                                                        <option value="/issue/year/2013">2013</option>
+                                                                        <option value="/issue/year/2014">2014</option>
+                                                                        <option value="/issue/year/2015">2015</option>
+                                                                        <option value="/issue/year/2016">2016</option>
+                                                                        <option value="/issue/year/2017">2017</option>
+                                                                        <option value="/issue/year/2018">2018</option>
+                                                                        <option value="/issue/year/2019">2019</option>
+                                                                        <option value="/issue/year/2020">2020</option>
+                                                                        <option value="/issue/year/2021">2021</option>
+                                                                    </select>
+                                <button type="button" onclick="browseYear()" class="btn-jmir-submit">Submit</button>
+                            </label>
+                        </form>
+                    </li>
+                    <li class=""><a href="/issue/archive">Browse by Issue</a>
+                    </li>
+                    <li class=""><a href="/search/authors">Browse by Author</a>
+                    </li>
+                    <li class=""><a href="/themes">Browse by Theme</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li id="btn-other-journals" class="">Other Journals<span class="typcn typcn-plus"></span></li>
+
+            <li class="other-journals-li other-journals-li-closed">
+                <ul class="clearfix sub-ul">
+
+                                                                                                                    <li ><a href="https://www.researchprotocols.org">JMIR Research Protocols</a></li>
+                                                                                                <li ><a href="https://mhealth.jmir.org">JMIR mHealth and uHealth</a></li>
+                                                                                                <li ><a href="https://medinform.jmir.org">JMIR Medical Informatics</a></li>
+                                                                                                <li ><a href="https://publichealth.jmir.org">JMIR Public Health and Surveillance</a></li>
+                                                                                                <li ><a href="https://mental.jmir.org">JMIR Mental Health</a></li>
+                                                                                                <li ><a href="https://formative.jmir.org">JMIR Formative Research</a></li>
+                                                                                                <li ><a href="https://www.iproc.org">Iproceedings</a></li>
+                                                                                                <li ><a href="https://games.jmir.org">JMIR Serious Games</a></li>
+                                                                                                <li ><a href="https://humanfactors.jmir.org">JMIR Human Factors</a></li>
+                                                                                                <li ><a href="https://www.i-jmr.org">Interactive Journal of Medical Research</a></li>
+                                                                                                <li ><a href="https://mededu.jmir.org">JMIR Medical Education</a></li>
+                                                                                                <li ><a href="https://cancer.jmir.org">JMIR Cancer</a></li>
+                                                                                                <li ><a href="https://diabetes.jmir.org">JMIR Diabetes</a></li>
+                                                                                                <li ><a href="https://rehab.jmir.org">JMIR Rehabilitation and Assistive Technologies</a></li>
+                                                                                                <li ><a href="https://pediatrics.jmir.org">JMIR Pediatrics and Parenting</a></li>
+                                                                                                <li ><a href="https://aging.jmir.org">JMIR Aging</a></li>
+                                                                                                <li ><a href="https://cardio.jmir.org">JMIR Cardio</a></li>
+                                                                                                <li ><a href="https://jopm.jmir.org">Journal of Participatory Medicine</a></li>
+                                                                                                <li ><a href="https://biomedeng.jmir.org">JMIR Biomedical Engineering</a></li>
+                                                                                                <li ><a href="https://periop.jmir.org">JMIR Perioperative Medicine</a></li>
+                                                                                                <li ><a href="https://nursing.jmir.org">JMIR Nursing</a></li>
+                                                                                                <li ><a href="https://derma.jmir.org">JMIR Dermatology</a></li>
+                                                                                                <li ><a href="https://www.medicine20.com">Medicine 2.0</a></li>
+                                                                                                <li ><a href="https://xmed.jmir.org">JMIRx Med</a></li>
+                                                                                                <li ><a href="https://bioinform.jmir.org">JMIR Bioinformatics and Biotechnology</a></li>
+                                                                                                <li ><a href="https://challenges.jmir.org">JMIR Challenges</a></li>
+                                                                                                <li ><a href="https://preprints.jmir.org">JMIR Preprints</a></li>
+                                                                                                <li ><a href="https://data.jmir.org">JMIR Data</a></li>
+                                                                                                <li ><a href="https://infodemiology.jmirx.org">JMIR Infodemiology</a></li>
+                                            
+
+                </ul>
+            </li>
+
+                            <li><a href="/user">MY ACCOUNT</a></li>
+            
+            <li><a href="/cms/view/support_%26amp%3B_membership">Membership</a></li>
+            <li><a href="/stats/overview">Top Articles</a></li>
+            <li><a href="/search">Search</a></li>
+        </ul>
+    </div>
+    <ul class="nav-desktop">
+        <li class="" data-balloon="Want to publish? Submit today!" data-balloon-pos="left"><a class='btn-hero-submit' href="/author">SUBMIT</a></li>
+        <li class=""><a href="/cms/view/support_%26amp%3B_membership">MEMBERSHIP</a></li>
+
+        <li style="margin-top:10px;">
+            <a href="https://twitter.com/jmirpub" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @jmirpub</a>
+        </li>
+
+        
+            <script>
+                ! function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = p + '://platform.twitter.com/widgets.js';
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, 'script', 'twitter-wjs');
+            </script>
+        
+        <li class="search-bar clearfix">
+            <form id="nav-search" class="search-basic clearfix" action="/search/searchResult" method="get">
+                <input name="field[]" value="text" type='hidden' />
+                <input id="basic-search" class="basic-input" type="text" placeholder="Search all Journals and Conferences" name="criteria[]">
+                <a href="/search">
+                    <button type="button" class="btn-show-advanced-search" onclick="ga('send', 'event', 'input', 'click', 'advanced-search',{'page': '/search'});">Advanced Search<i class="icon-arrow">&nbsp;</i>
+                    </button>
+                </a>
+                <input type="submit" value="" class="icon-search" name="clicked" onclick="ga('send', 'event', 'input', 'click', 'header-search');">
+            </form>
+        </li>
+                <li class="">
+            <div id="user-homepage"class="user-info"><style>
+    .tagline {
+        max-width: 48%;
+    }
+    .user-info {
+        font-family: 'Roboto', sans-serif;
+        float: right;
+        margin-top: 5px;
+    }
+    .user-info a {
+        text-decoration: none;
+    }
+    .user-info a:hover {
+        background: transparent;
+    }
+    .user-info p{
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.2;
+    }
+    .user-info .inline-block {
+        display: inline-block;
+    }
+    .user-info .fa-user-circle {
+        font-size: 32px;
+        margin-right: 3px;
+    }
+    .user-info .profile-image {
+        width: 32px;
+        height: 32px;
+        margin-right: 3px;
+        border-radius: 20px;
+        position: relative;
+        top: 4px;
+    }
+    .user-info .fullname {
+        font-weight: bold;
+        text-transform: capitalize;
+        white-space: nowrap;
+        width: 220px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .user-info .username {
+        opacity: 0.7;
+        white-space: nowrap;
+        width: 220px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    #new-topbar .font-color {
+        color: inherit !important;
+    }
+    #mobile-topbar .user-info {
+        margin-right: 5px;
+    }
+    #mobile-topbar .fullname {
+        color: #1d1d1d;
+    }
+    #mobile-topbar .username {
+        color: #6b6b6b;
+        opacity: 1;
+    }
+    #mobile-topbar .user-info .fa-user-circle {
+        position: relative;
+        font-size: 28px;
+        bottom: 2px;
+    }
+    #user-homepage {
+        margin-left: 25px;
+    }
+    #user-homepage-hover {
+        background: none;
+        padding: 0;
+    }
+    @media screen and (max-width: 1420px) {
+        #new-topbar .tagline {
+            max-width: 33%;
+        }
+    }
+    @media screen and (max-width: 1130px) {
+        #new-topbar .tagline {
+            max-width: 24%;
+        }
+        #new-topbar h5 {
+            font-size: 12px;
+        }
+    }
+    @media screen and (max-width: 1015px) {
+        #new-topbar .tagline {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 414px) {
+        #mobile-topbar .user-info p {
+            font-size: 12px;
+        }
+    }
+</style>
+<a href="/user" id="user-homepage-hover" class="font-color {$result.journal}">
+        <div class="fa fa-user-circle inline-block">
+    </div>
+        <div class="user inline-block">
+        <p class="fullname">Ciarán McInerney</p>
+        <p class="username">Username: c.mcinerney@leeds.ac.uk</p>
+    </div>
+</a>
+</div>
+        </li>
+            </ul>
+</nav>
+
+<style>
+    header .header-wrapper nav .nav-mobile ul .browse-year label select {
+        display: inline;
+        margin: -40px 0px auto;
+        width: 75%;
+        height: 30px;
+        border-radius: 0px;
+    }
+
+    .btn-jmir-submit {
+        background: #629f36;
+        padding: 5px 12px;
+        margin-left: 6px;
+        color: #fff;
+    }
+</style>
+
+<script>
+    function browseYear() {
+        var year = $('#yearSelect').val();
+        window.location.href = year;
+    }
+</script>
+			</div>
+
+			<div id="journal-nav" class="journal-specific-nav-wrapper clearfix">
+    <section class="inner-nav-container clearfix">
+        <div class="journal-title-h2">
+            <ul class="journals-drop-down-container">
+                <li id="journals-list" class="btn-journals"><a href=https://www.jmir.org onclick="ga('send', 'event', 'button', 'click', 'icon-home');"><span class="typcn typcn-home icon-home" style="margin-right:5px; font-size:20px; position:static; border-left:none;"></span>Journal of Medical Internet Research</a><span class="btn-journal-expand typcn typcn-arrow-down-thick" data-balloon="Visit our sister journals!" data-balloon-pos="up" style="font-family:typicons;padding-top:2px;">&#57352;</span>
+                    <ul class="journals-ul clearfix" style="height: 340px;">
+                                                                                                                                        <li class="resprot-li"><a href="https://www.researchprotocols.org">JMIR Research Protocols</a></li>
+                                                                                                                <li class="mhealth-li"><a href="https://mhealth.jmir.org">JMIR mHealth and uHealth</a></li>
+                                                                                                                <li class="medinform-li"><a href="https://medinform.jmir.org">JMIR Medical Informatics</a></li>
+                                                                                                                <li class="publichealth-li"><a href="https://publichealth.jmir.org">JMIR Public Health and Surveillance</a></li>
+                                                                                                                <li class="mental-li"><a href="https://mental.jmir.org">JMIR Mental Health</a></li>
+                                                                                                                <li class="formative-li"><a href="https://formative.jmir.org">JMIR Formative Research</a></li>
+                                                                                                                <li class="iproc-li"><a href="https://www.iproc.org">Iproceedings</a></li>
+                                                                                                                <li class="games-li"><a href="https://games.jmir.org">JMIR Serious Games</a></li>
+                                                                                                                <li class="humanfactors-li"><a href="https://humanfactors.jmir.org">JMIR Human Factors</a></li>
+                                                                                                                <li class="ijmr-li"><a href="https://www.i-jmr.org">Interactive Journal of Medical Research</a></li>
+                                                                                                                <li class="mededu-li"><a href="https://mededu.jmir.org">JMIR Medical Education</a></li>
+                                                                                                                <li class="cancer-li"><a href="https://cancer.jmir.org">JMIR Cancer</a></li>
+                                                                                                                <li class="diabetes-li"><a href="https://diabetes.jmir.org">JMIR Diabetes</a></li>
+                                                                                                                <li class="rehab-li"><a href="https://rehab.jmir.org">JMIR Rehabilitation and Assistive Technologies</a></li>
+                                                                                                                <li class="pediatrics-li"><a href="https://pediatrics.jmir.org">JMIR Pediatrics and Parenting</a></li>
+                                                                                                                <li class="aging-li"><a href="https://aging.jmir.org">JMIR Aging</a></li>
+                                                                                                                <li class="cardio-li"><a href="https://cardio.jmir.org">JMIR Cardio</a></li>
+                                                                                                                <li class="jopm-li"><a href="https://jopm.jmir.org">Journal of Participatory Medicine</a></li>
+                                                                                                                <li class="biomedeng-li"><a href="https://biomedeng.jmir.org">JMIR Biomedical Engineering</a></li>
+                                                                                                                <li class="periop-li"><a href="https://periop.jmir.org">JMIR Perioperative Medicine</a></li>
+                                                                                                                <li class="nursing-li"><a href="https://nursing.jmir.org">JMIR Nursing</a></li>
+                                                                                                                <li class="derma-li"><a href="https://derma.jmir.org">JMIR Dermatology</a></li>
+                                                                                                                <li class="med20-li"><a href="https://www.medicine20.com">Medicine 2.0</a></li>
+                                                                                                                <li class="xmed-li"><a href="https://xmed.jmir.org">JMIRx Med</a></li>
+                                                                                                                <li class="bioinform-li"><a href="https://bioinform.jmir.org">JMIR Bioinformatics and Biotechnology</a></li>
+                                                                                                                <li class="challenges-li"><a href="https://challenges.jmir.org">JMIR Challenges</a></li>
+                                                                                                                <li class="preprints-li"><a href="https://preprints.jmir.org">JMIR Preprints</a></li>
+                                                                                                                <li class="data-li"><a href="https://data.jmir.org">JMIR Data</a></li>
+                                                                                                                <li class="infodemiology-li"><a href="https://infodemiology.jmirx.org">JMIR Infodemiology</a></li>
+                                                                        </ul>
+                </li>
+            </ul>
+                            <div class="minimal-logo">
+                    <a href="/announcement/view/226">
+                        <span class="circle-base small-impact-logo"></span>
+                        <span class="impact-text">Impact Factor 5.03</span>
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    </a>
+                </div>
+                                                                                    <div class="tooltip__ui--right js--btn-journal-dropdown-tooltip show">
+                <p>Explore our sister journals here.</p>
+            </div>
+        </div>
+        <div class="journal-specific-nav clearfix">
+            <ul class="current-upcoming-ul">
+                <li><a href="/issue/current">Current Issue</a></li>
+                <li><a href="/issue/upcoming">Upcoming Issue</a></li>
+                <li><a href="/stats/overview">Top Articles</a></li>
+            </ul>
+            <ul class="browse-by-year-ul">
+                <li>
+                    <form>
+                        <label>Browse by Year:
+                            <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                                <option value="">Select...</option>
+                                                                    <option value="/issue/year/1999">1999</option>
+                                                                    <option value="/issue/year/2000">2000</option>
+                                                                    <option value="/issue/year/2001">2001</option>
+                                                                    <option value="/issue/year/2002">2002</option>
+                                                                    <option value="/issue/year/2003">2003</option>
+                                                                    <option value="/issue/year/2004">2004</option>
+                                                                    <option value="/issue/year/2005">2005</option>
+                                                                    <option value="/issue/year/2006">2006</option>
+                                                                    <option value="/issue/year/2007">2007</option>
+                                                                    <option value="/issue/year/2008">2008</option>
+                                                                    <option value="/issue/year/2009">2009</option>
+                                                                    <option value="/issue/year/2010">2010</option>
+                                                                    <option value="/issue/year/2011">2011</option>
+                                                                    <option value="/issue/year/2012">2012</option>
+                                                                    <option value="/issue/year/2013">2013</option>
+                                                                    <option value="/issue/year/2014">2014</option>
+                                                                    <option value="/issue/year/2015">2015</option>
+                                                                    <option value="/issue/year/2016">2016</option>
+                                                                    <option value="/issue/year/2017">2017</option>
+                                                                    <option value="/issue/year/2018">2018</option>
+                                                                    <option value="/issue/year/2019">2019</option>
+                                                                    <option value="/issue/year/2020">2020</option>
+                                                                    <option value="/issue/year/2021">2021</option>
+                                                            </select>
+                        </label>
+                    </form>
+                </li>
+            </ul>
+            <ul class="browse-by-issue-author-title-theme">
+                <li>Browse:</li>
+                <li><a href="/issue/archive">Issues</a></li>
+                <li><a href="/search/authors">Authors</a></li>
+                <li><a href="/themes">Themes</a></li>
+            </ul>
+        </div>
+    </section>
+</div>
+			
+				<script type="text/javascript">
+					$(document).ready(function($) {
+						$(".maintenanceClose").click(function(){
+							$(this).parent().hide();
+					        var superdomain = location.hostname.replace(/^[^.]+\./g, ".");
+					        var expiry = new Date("May 14, 2016 00:00:00");
+					        document.cookie = "maintenanceClosed=1; expires=" + expiry.toString() + ";domain=" + superdomain + ";";
+						});
+						//copied from w3school
+					function getCookie(cname) {
+					    var name = cname + "=";
+					    var ca = document.cookie.split(';');
+					    for(var i = 0; i < ca.length; i++) {
+					        var c = ca[i];
+					        while (c.charAt(0) == ' ') {
+					            c = c.substring(1);
+					        }
+					        if (c.indexOf(name) == 0) {
+					            return c.substring(name.length, c.length);
+					        }
+					    }
+					    return "";
+					}
+
+					function checkCookie() {
+					    var maintenanceClose = getCookie("maintenanceClosed");
+					    console.log(maintenanceClose);
+					    if (maintenanceClose == 1) {
+					    	$(".messageMaintenance").hide();
+					    } else {
+					    	$(".messageMaintenance").show();
+					    }
+					}
+					checkCookie();
+
+					});
+				</script>
+				<style type="text/css">
+					.messageMaintenance{
+						position:fixed;
+						background:#FFF;
+						border:5px solid #FF9900;
+						box-sizing: border-box;
+						padding:12px 12px;
+						bottom:0px;
+						left:0px;
+						right:0px;
+					}
+					.maintenanceClose{
+						position:absolute;
+						top:0px;
+						right:0px;
+						background:none;
+						font-size: 32px;
+					}
+				</style>
+			
+		</header>
+
+        
+            <p v-html="curtis"></p>
+        
+		
+		
+<style>
+#maintenance {
+    display: none;
+    background: rgba(16, 100, 154, 1);
+    box-shadow: 0 0 5px #999;
+    max-width: 550px;
+    width: 100%;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 100000;
+    font-size: 14px;
+    line-height: 18px;
+    box-sizing: border-box;
+    color: #ffffff !important;
+    font-family: Roboto !important;
+}
+
+#maintenance a{
+    color: orange;
+}
+#maintenance__container p.h3 {
+    padding-bottom: 5px;
+    font-size: 16px;
+    margin: 10px 0 4px 0 !important;
+    font-weight: 800;
+    color: white !important;
+}
+#maintenance__container {
+    text-align: left;
+    padding: 12px;
+}
+#maintenance__container p {
+    margin-top: 0 !important;
+}
+#maintenance__header p.h3 {
+    font-weight: 800;
+    font-size: 18px;
+    color: white !important;
+    border-bottom: 1px solid #ffffff;
+    padding: 12px 12px 11px 26px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 1.1 !important;
+}
+#maintenance__header .orange {
+    padding: 20.75px 7px;
+    background-color: orange;
+    position: absolute;
+    left: 0;
+}
+#maintenance__container ul li {
+    margin-bottom: 3px;
+}
+#maintenance__icon {
+    width: 79px;
+    height: 78px;
+    margin-bottom: 20px;
+}
+#maintenance__close {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    cursor: pointer;
+}
+#maintenance__close-icon {
+    font-size: 18px;
+    color: #ffffff;
+}
+@media (max-width: 400px) {
+    #maintenance {
+        left: 0;
+    }
+}
+</style>
+<script type="text/javascript">
+    var jNoConflict;
+    if (typeof j != 'undefined') {
+        jNoConflict = j;
+    } else {
+        jNoConflict = $;
+    }
+    // uncomment to enable maintenance note, comment to disable
+    jNoConflict(document).ready(function() {
+        var today = new Date();
+        var expire = new Date(2019, 07, 2, 0, 0, 0, 0);
+
+        if (today < expire) {
+            checkCookie();
+
+            jNoConflict('body').on('click', '#maintenance__close, #maintenance__bg', function() {
+                jNoConflict('#maintenance, #maintenance__bg').hide();
+                var superdomain = location.hostname;
+
+                determineExpiryTime(function(expireTime) {
+                    var expiry = new Date(expireTime);
+                    document.cookie = "maintenanceHide=1; expires=" + expiry.toGMTString() + ";domain=" + superdomain + ";path=/";
+                })
+
+            })
+        }
+    });
+    function determineExpiryTime(callback) {
+        var sid = getCookie("OJSSID");
+        var u_ids = [104788, 14789, 104790, 104791, 106675, 113817];
+        var now = new Date();
+        var expireTime = now.getTime() + 1000 * 60 * 60 * 48;
+
+        $.ajax({
+            url: "/user/restrictUsers",
+            type: "POST",
+            data: {
+                users: u_ids
+            },
+            success: function(data) {
+                if(data > 0) {
+                    expireTime = now.getTime() * 30;
+                }
+                callback(expireTime);
+            }
+        });
+    }
+    function checkCookie() {
+        var maintenanceClose = getCookie("maintenanceHide");
+        if (maintenanceClose) {
+            jNoConflict('#maintenance, #maintenance__bg').hide();
+        } else {
+            jNoConflict('#maintenance, #maintenance__bg').show();
+        }
+    }
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+</script>
+
+<div id="maintenance">
+    <div id="maintenance__header">
+        <div class="orange"></div>
+        <p class="h3 border">Maintenance Notice</p>
+        <div id="maintenance__close"><span id="maintenance__close-icon" class="fa fa-times"></span></div>
+    </div>
+    <div id="maintenance__container">
+        <p>
+            Due to necessary scheduled maintenance, the JMIR Publications website will be unavailable from <strong>Wednesday, July 01, 2020 at 8:00 PM to 10:00 PM EST</strong>. We apologize in advance for any inconvenience this may cause you.
+        </p>
+        <p class="h3">Who will be affected?</p>
+        <ul style="list-style: initial; margin-left: 20px; padding: 0">
+            <li><strong>Readers:</strong> No access to all 28 journals. We recommend accessing our articles via <a href="https://www.ncbi.nlm.nih.gov/pmc/?term=jmir">PubMed Central</a></li>
+            <li><strong>Authors:</strong> No access to the submission form or your user account.</li>
+            <li><strong>Reviewers:</strong> No access to your user account. Please download manuscripts you are reviewing for offline reading before <strong>Wednesday, July 01, 2020 at 7:00 PM</strong>.</li>
+            <li><strong>Editors:</strong> No access to your user account to assign reviewers or make decisions.</li>
+            <li><strong>Copyeditors:</strong> No access to user account. Please download manuscripts you are copyediting before <strong>Wednesday, July 01, 2020 at 7:00 PM</strong>.</li>
+        </ul>
+    </div>
+</div>		
+			
+<main class="wrapper clearfix">
+	<section class="cms-wrapper text-holder clearfix">
+		<h2>Instructions for Authors of JMIR</h2>
+<p>The Journal of Medical Internet Research (JMIR) and its sister journals are innovative, international, peer-reviewed medical journals that aim to&nbsp;publish articles relevant for medical professionals, system developers, and system users alike.</p>
+<p>These instructions for authors are valid for all JMIR journals. Instructions for authors are subject to frequent revision. Please look them over carefully before submitting your manuscript.</p>
+<p>Manuscripts are considered with the understanding that they have&nbsp;<strong>not been published previously in print or electronic format</strong>&nbsp;and are not under consideration by another print or electronic publication. A complete report following a presentation at a meeting or the publication of preliminary findings elsewhere (eg, in an abstract)&nbsp;will be considered. Material that has been published on the Internet (including <a href="https://support.jmir.org/hc/en-us/articles/360002385191-Can-I-submit-a-paper-to-you-that-has-previously-published-on-a-different-Preprint-server-such-as-arXiv-other-than-JMIR-Preprints-" target="_blank">Preprint</a> servers) can also be considered, but any previous or simultaneous publication on the Internet must be disclosed in the cover letter. Include copies of potentially duplicative material that has been previously published or is currently being considered elsewhere, and provide links to duplicative material on the Internet. Point out possible overlaps with previously published or simultaneously submitted articles in your cover letter. Note that "duplicate publication or the submission of duplicate material is not necessarily unethical, but failure to disclose the existence of duplicate articles, manuscripts, or other material is unethical and may represent a violation of copyright material." (AMA Manual of Style, 9th ed, p. 98). A content overlap of just 10% may be considered duplicative.</p>
+<p>For general information about the structure and content of a biomedical manuscript, authors should become familiar (skim through) the&nbsp;<a href="../../../../cms/view/instructions_for_authors:icmje_uniform_requirements_for_manuscripts">ICMJE Uniform Requirements for Manuscripts</a>&nbsp;before reading the specific instructions for JMIR authors below.</p>
+<p><strong>Our instructions for authors can now be found in our comprehensive <a href="https://support.jmir.org/hc/en-us" target="_blank">Knowledge Base (KB)</a>.&nbsp;</strong></p>
+<p><strong>Key articles from our KB:&nbsp;</strong></p>
+<ul>
+<li><a class="search-result-link" href="https://support.jmir.org/hc/en-us/articles/115001277847-Are-there-costs-involved-in-publishing-in-JMIR-journals-what-are-your-fees-">Are there costs involved in publishing in JMIR journals, what are your fees?</a></li>
+<li><a class="search-result-link" href="https://support.jmir.org/hc/en-us/articles/115001442707-Which-journal-titles-are-JMIR-Publications-currently-publishing-Journal-Portfolio-">Which journal titles is JMIR Publications currently publishing? (Journal Portfolio)</a></li>
+<li><a class="u-userTextColor" href="https://jmir.zendesk.com/hc/en-us/articles/115004950787-What-are-the-article-types-for-JMIR-journals-" target="_blank">What are the article types for JMIR journals?</a></li>
+<li><a href="https://jmir.zendesk.com/hc/en-us/articles/115002798327-What-is-the-maximum-word-count-Does-that-include-tables-">What is the maximum word count?</a></li>
+<li>Format for original articles
+<ul>
+<li><a class="search-result-link" href="https://support.jmir.org/hc/en-us/articles/115001339087-Is-there-a-Word-template-for-JMIR-journals-available-">Word-template for JMIR journals</a></li>
+<li><a href="https://support.jmir.org/hc/en-us/articles/115002943791-What-are-JMIR-s-guidelines-for-article-titles-">What are JMIR's guidelines for article titles?<span>&nbsp;</span></a></li>
+<li><a class="search-result-link" href="https://support.jmir.org/hc/en-us/articles/360020341552-Guidelines-for-writing-abstracts">Guidelines for Writing Abstracts</a></li>
+<li><a class="search-result-link" href="https://support.jmir.org/hc/en-us/articles/360016786231-Choosing-Keywords">Keywords</a></li>
+<li><a href="https://support.jmir.org/hc/en-us/search/click?data=BAh7CjoHaWRsKwhLFZ3GGgA6CXR5cGVJIgxhcnRpY2xlBjoGRVQ6CHVybEkiAZZodHRwczovL3N1cHBvcnQuam1pci5vcmcvaGMvZW4tdXMvYXJ0aWNsZXMvMTE1MDAxMzMzMDY3LUhvdy1zaG91bGQtcmVmZXJlbmNlcy1iZS1mb3JtYXR0ZWQtV2hpY2gtam91cm5hbC1zdHlsZS1zaG91bGQtSS1jaG9vc2Utd2hlbi11c2luZy1FbmRub3RlLWV0Yy0GOwdUOg5zZWFyY2hfaWRJIikwYjQ5NWVmZC01MmI2LTRlYzEtODkzZi0zODVlNWVkM2U0MjIGOwdGOglyYW5raQY%3D--d3b212a1b13fa3bff2109227a8b2e9b38950ba5b">References</a>, see&nbsp;<a href="https://support.jmir.org/hc/en-us/articles/115001333067-How-should-references-be-formatted-Which-journal-style-should-I-choose-when-using-Endnote-or-other-reference-management-software-">How should references be formatted? Which journal style should I choose when using Endnote etc.<span>&nbsp;</span></a></li>
+<li><a href="https://support.jmir.org/hc/en-us/articles/360000249272-Abbreviations-incl-which-abbreviations-don-t-need-to-be-expanded-">Abbreviations (incl. which abbreviations don't need to be expanded?)</a></li>
+<li>Conflict of Interests, see&nbsp;<a href="https://support.jmir.org/hc/en-us/articles/115001252671-How-does-JMIR-define-a-Conflict-of-Interest-COI-">How does JMIR define a Conflict of Interest (COI)?<span>&nbsp;</span></a></li>
+<li>Supplementary files: Multimedia Appendix and Figures, see&nbsp;<a class="search-result-link" href="https://support.jmir.org/hc/en-us/articles/360001218371-How-do-I-upload-add-supplementary-files-figures-Multimedia-Appendix-additional-material-for-reviewers-editors-only-after-submission-">What are the guidelines for supplementary files (figures, Multimedia Appendix, additional material for reviewers/editors only)?</a></li>
+<li>Tables (part of the manuscript file), see&nbsp;<a href="https://support.jmir.org/hc/en-us/articles/115004167607-How-should-tables-be-formatted-">How should tables be formatted?</a></li>
+</ul>
+</li>
+<li><a class="search-result-link" href="https://support.jmir.org/hc/en-us/articles/360019504191-JMIR-House-Style-and-Editorial-Guidelines">JMIR House Style and Editorial Guidelines</a></li>
+<li><a class="search-result-link" href="https://support.jmir.org/hc/en-us/articles/360000002012-How-should-P-values-be-reported-">How should P values be reported?</a></li>
+<li>Submission process</li>
+<ul>
+<li><a href="https://support.jmir.org/hc/en-us/articles/115001487008-Where-how-do-I-submit-my-paper-to-a-JMIR-journal-">Where/how do I submit my paper to a JMIR journal?</a></li>
+<li><a class="search-result-link" href="https://support.jmir.org/hc/en-us/articles/115002470951-As-an-author-who-can-should-I-nominate-as-a-peer-reviewer-">As author, who can/should I nominate as peer-reviewer?</a></li>
+<li>Table of Contents (TOC) image, see&nbsp;<a class="search-result-link" href="https://support.jmir.org/hc/en-us/articles/115001261607-What-is-a-TOC-image-and-where-how-do-I-upload-it-">What is a TOC image and where/how do I upload it?</a></li>
+</ul>
+</ul>
+<p>&nbsp;</p>
+<p>For all other author-related KB articles please go to&nbsp;<a href="https://support.jmir.org/hc/en-us/categories/115000234107-For-Authors-and-Editorial-Issues)">https://support.jmir.org/hc/en-us/categories/115000234107-For-Authors-and-Editorial-Issues)</a>.</p>
+<p>You can also post a question in our<a href="https://support.jmir.org/hc/en-us/community/topics" target="_blank"> community forum</a> or file a ticket with the Helpdesk, see <a class="search-result-link" href="https://support.jmir.org/hc/en-us/articles/115001385368-How-can-I-contact-staff-or-editors-at-JMIR-Publications-">How can I contact staff or editors at JMIR Publications?</a></p>
+<p>&nbsp;</p>
+<p><strong><span style="font-size: 1em;">Format for Original Papers (for other paper types see&nbsp;</span></strong><a href="https://support.jmir.org/hc/en-us/articles/115004950787-What-are-the-article-types-for-JMIR-journals-">What are the article types for JMIR journals?)</a></p>
+<p>&nbsp;</p>
+<p>Papers&nbsp;should be written in accordance with the American Medical Association Manual of Style:&nbsp;A Guide for Authors and Editors. 9th ed. Baltimore, Md: Williams &amp; Wilkins; 1998.</p>
+<table style="width: 100%;" border="0" cellspacing="1" cellpadding="2">
+<tbody>
+<tr>
+<td valign="top" width="10%"><a href="http://www.amazon.com/exec/obidos/ASIN/0683402064/jmir-20?dev-t=mason-wrapper%26camp=2025%26link_code=xm2" target="_top"><img src="http://images.amazon.com/images/P/0683402064.01.THUMBZZZ.jpg" alt="" width="42" height="60" border="0" /> </a></td>
+<td width="70%"><img src="../../../../ojs/public/journals/1/images/linkout.gif" alt="" width="18" height="15" border="0" /> <strong><a href="http://www.amazon.com/exec/obidos/ASIN/0683402064/jmir-20?dev-t=mason-wrapper%26camp=2025%26link_code=xm2" target="_top">American Medical Association Manual of Style : A Guide for Authors and Editors (AMA)</a></strong> <br />Cheryl Iverson; Hardcover; $39.95</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>The following format ("<strong>IMRAD Format</strong>") must be used for the paper:</p>
+<p>Title</p>
+<p>Abstract (not exceeding 450 words for structured abstracts)</p>
+<p>Keywords&nbsp;</p>
+<p><strong>I</strong>ntroduction (eg, theory, hypotheses, prior work)</p>
+<p><strong>M</strong>ethods (eg with the subheadings "Recruitement", "Statistical Analysis", etc.)</p>
+<p><strong>R</strong>esults (eg, user statistics, evaluation outcomes). If your study consists of different stages/parts, subheadings in this section should mirror subheadings in the methods section to describe these parts.</p>
+<p><strong>D</strong>iscussion (eg, with the subheadings "Principal Results", "Limitations", "Comparison with Prior Work", "Conclusions")</p>
+<p>Acknowledgements</p>
+<p>Conflicts of Interest</p>
+<p>[optional] Multimedia Appendix of supplementary files (eg, a PowerPoint presentation of a conference talk about the study, additional screenshots of a website,&nbsp;mpeg/Quicktime video or audio files, or Excel, Access, SAS, or SPSS files containing original data)&nbsp;</p>
+<p>References&nbsp;</p>
+<p>Abbreviations</p>
+<p><strong>Please use further subheadings</strong> within the main "Introduction," "Methods," "Results," and "Discussion" sections. For example, if you describe three different methods, use three subheadings within the "Methods" section. Also, use matching subheadings in the "Results" section if you report the results from each of the described methods.</p>
+<p><span style="font-size: 1em;">Important Notes on&nbsp;Reporting </span><em style="font-size: 1em;">P</em><span style="font-size: 1em;"> values</span></p>
+<p>The actual <em>P</em> value should be expressed (<em>P</em> = .04) rather than expressing a statement of inequality (<em>P</em> &lt; .05), unless <em>P</em> &lt; .001. The <em>P</em> value&nbsp;should be expressed to 2 digits whether or not it is significant. When rounding, 3 digits is acceptable if rounding would change the significance of a value (eg, <em>P</em> = .049 rounded to .05). If <em>P</em> &lt; .01, it should be expressed to 3 digits.</p>
+<p><em>P</em> values less than .001 should be reported as <em>P</em> &lt; .001. Expressing <em>P</em> to more than 3 significant digits does not add useful information since precise <em>P</em> values with extreme results are sensitive to biases or departures from the statistical model.</p>
+<p>The traditional reporting of <em>P</em> values (indicating only that <em>P</em> &lt; 0.05) simply indicated whether the results were "statistically significant" or not. But <em>P</em> values of 0.051 and 0.049 should be interpreted similarly despite the fact that the 0.051 is greater than 0.05 and is therefore not "significant" and that the 0.049 is less than 0.05 and thus is "significant." Reporting actual <em>P</em> values avoids this problem of interpretation. <em>P</em> values should not be listed as not significant (NS) since, for meta-analysis, the actual values are important and not providing exact <em>P</em> values is a form of incomplete reporting.</p>
+<p>Do not use 0 before the decimal point for statistical values <em>P</em>, alpha, and beta because they cannot equal 1. For some statistical values (eg, kappa) even if they cannot ever equal 1, use 0 if they are used infrequently.</p>
+<p><strong><em>P</em> is always italicized and capitalized.</strong></p>
+<p>Authors who are not sure how to report their quantitative results should consult the following book:</p>
+<table style="width: 100%;" border="0" cellspacing="1" cellpadding="2">
+<tbody>
+<tr>
+<td valign="top" width="10%"><a href="http://www.amazon.com/exec/obidos/ASIN/0943126444/jmir-20?dev-t=mason-wrapper%26camp=2025%26link_code=xm2" target="_top"><img src="http://images.amazon.com/images/P/0943126444.01.THUMBZZZ.jpg" alt="" width="41" height="60" border="0" /> </a></td>
+<td width="70%"><img src="../../../../ojs/public/journals/1/images/linkout.gif" alt="" width="18" height="15" border="0" /> <strong><a href="http://www.amazon.com/exec/obidos/ASIN/0943126444/jmir-20?dev-t=mason-wrapper%26camp=2025%26link_code=xm2" target="_top">How to Report Statistics in Medicine: Annotated Guidelines for Authors, Editors, and Reviewers (Medical Writing and Communication)</a></strong> <br />Thomas A. Lang; Paperback; $39.95</td>
+</tr>
+</tbody>
+</table>
+<h4>&nbsp;</h4>
+	</section>
+</main>
+
+		<footer>
+			<h3>Journal of Medical Internet Research
+									<span> ISSN 1438-8871 </span>
+							</h3>
+			<div class="other-links-wrapper clearfix">
+				<ul class="clearfix">
+					<li class="other-links-parent-li">
+						<h3>Journals</h3>
+						<ul class="journals-list-footer">
+
+						</ul>
+					</li>
+					<li class="other-links-parent-li">
+						<h3>Editorial Policies</h3>
+						<ul class="ul-show-more">
+							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#focusAndScope">Focus and Scope</a></li>							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#sectionPolicies">Section Policies</a></li>
+							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#peerReviewProcess">Peer Review Process</a></li>							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#publicationFrequency">Publication Frequency</a></li>							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#openAccessPolicy">Open Access Policy</a></li>							
+							<!-- https://www.jmir.org/about/subscriptions%3FnewDesign -->
+														<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#authorSelfArchivePolicy">Author Self-Archiving</a></li>																														<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom0">Indexing and Impact Factor</a></li>															<li><a href="/about/editorialTeam">Editorial Board</a></li>								<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom1">Editorial Board Policy</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom2">Record Keeping and Research Policy</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom3">Subscriptions (Membership)</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom4">Theme Issues and Guest Editors</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom5">Trademarks and Service Marks Policy</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom6">Fee Schedule</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom7">Instructions for Authors</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom8">About the Publisher</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom9">New Journal / Editor-in-Chief Proposals</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom10">Publication Ethics and Malpractice</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom11">Criteria for the Selection of Manuscripts</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom12">Ethical Issues and Considerations</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom13">Copyright Notice</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom14">New Journal / Editor-in-Chief Proposals</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom15">Peer Review Process</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom16">Author Self-Archiving</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom17">Online Submissions</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom18">Privacy Statement</a></li>																							<li> <a target="_self" href="https://www.jmir.org/about/editorialPolicies#custom19">Submission Preparation Checklist</a></li>														
+						</ul>
+					</li>
+					<li class="other-links-parent-li">
+						<h3>Submissions</h3>
+						<ul>
+							<li><a target="_self" href="https://www.jmir.org/about/submissions#onlineSubmissions">Online Submissions</a></li>
+																					<li><a href="https://jmir.zendesk.com/hc/en-us/articles/360004220332">Privacy Statement</a></li>							
+						</ul>
+					</li>
+					<li class="other-links-parent-li">
+						<h3>Other</h3>
+						<ul>
+							<li><a href="/announcement">Announcements</a></li>
+							<li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dGR6eVMxTEdxblVycV8tMVRmdjRHS2c6MQ">Feedback</a></li>
+							<li><a href="https://jmir.zendesk.com/hc/en-us">Knowledge Base/Help Center/FAQs</a></li>
+							<li><a href="/about/contact">Contact Us</a></li>
+							<li><a href="/sitemap.xml">Sitemap</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="social-media-wrapper">
+                <ul>
+                    <li><a href="https://twitter.com/jmirpub" target="_blank"><span class="typcn typcn-social-twitter"></span>Twitter</a></li>
+                    <li><a href="https://www.facebook.com/JMedInternetRes" target="_blank"><span class="typcn typcn-social-facebook" target="_blank" style="display: none;"></span>Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/jmir-publications" target="_blank"><span class="typcn typcn-social-linkedin"></span>LinkedIn</a></li>
+                    <li><a href="https://google.com/+JmirOrg" target="_blank"><span class="typcn typcn-social-google-plus"></span>Google+</a></li>
+                                        <li><a href=http://feeds.feedburner.com/JMedInternetRes target="_blank"><span class="typcn typcn-rss"></span>RSS</a></li>
+                                    </ul>
+            </div>
+							<div class="other-logos-wrapper clearfix">
+<ul class="other-logos-ul">
+<li><a class="pub-med" href="http://www.ncbi.nlm.nih.gov/pubmed?term=%22J+Med+Internet+Res%22[jour]" target="_blank">Pub Med</a></li>
+<li><a class="pub-med-central" href="http://www.ncbi.nlm.nih.gov/pmc/journals/224/" target="_blank">Pub Med Central</a></li>
+<li><a class="cope" href="http://publicationethics.org/members/journal-medical-internet-research-jmir" target="_blank">Committee on Publication Ethics</a></li>
+<li><a class="cross-ref" href="http://search.crossref.org/?q=1438-8871" target="_blank">Cross Ref Member</a></li>
+<li><a class="doaj" href="https://doaj.org/toc/c9b232aa100e40f6bb8aa3f0189f08a5" target="_blank">Directory of Open Access Journals</a></li>
+<li><a class="open-access" href="#">Open Access</a></li>
+<li><a class="oaspa" href="http://oaspa.org/member-record-jmir-publications-inc/" target="_blank">Open Access Scholarly Publishers Association</a></li>
+<li><a class="stm" href="http://www.stm-assoc.org" target="_blank">STM Member</a></li>
+<li><a class="trendMD-logo" href="https://www.trendmd.com/" target="_blank">Trend MD Member</a></li>
+<li><a class="orcid-logo" style="width: 228px; background-position: -1685px 0px;" href="https://www.orcid.org/" target="_blank">ORCiD Member</a></li>
+</ul>
+</div>
+						<p>Copyright &copy; 2021 JMIR Publications</p>
+			<div class="support-tooltip" style="display: none;">
+				NEW: Help Desk Now Available
+			</div>
+		</footer>
+
+		
+        <script defer src="//js.trendmd.com/trendmd.min.js" data-trendmdconfig="{'element': '#trendmd-suggestions'}"></script>
+
+		
+
+					
+				<script type="text/javascript"> var addthis_config = addthis_config||{}; addthis_config.services_exclude = 'mendeley, citeulike';addthis_config.data_track_clickback=false;
+				</script>
+			
+						
+			<script>
+				$( document ).ready(function() {
+					setTimeout(function(){
+						$('.support-tooltip').fadeIn(500);
+					}, 5000);
+
+					$('.support-tooltip').on('click hover', function(){
+						$(this).fadeOut(400);
+					});
+				});
+			</script>
+			
+
+		<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5407198f78be0579"></script>
+		<script type="text/javascript" src="https://asset.jmir.pub/assets/static/js/journals-drop-down-new.js?v=127.1.1.1"></script>
+			</body>
+</html>
